@@ -1,4 +1,4 @@
-import { Navigate, Route, createBrowserRouter, createRoutesFromElements } from "react-router-dom";
+import { Navigate, Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from "react-router-dom";
 import { Home } from "../pages";
 
 const browserRouter = createBrowserRouter(
@@ -8,3 +8,11 @@ const browserRouter = createBrowserRouter(
         <Route path="*" element={<Navigate to="/404" replace />} />,
     ])
 )
+
+const Router = () => {
+    return <RouterProvider router={browserRouter} />;
+}
+
+export {
+    Router
+}
