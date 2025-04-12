@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 import { DS_ButtonProps } from './types.d';
-import { DS_Spacing } from '../../spacing';
-import { DS_Colors } from '../../colors';
+import { DS_Spacing } from '../../tokens/spacing';
+import { DS_Colors } from '../../tokens/colors';
 
 export const ButtonContainer = styled.button<DS_ButtonProps>`
     display: flex;

@@ -1,8 +1,10 @@
 import { ButtonHTMLAttributes, ReactNode } from "react";
 
 export interface DS_ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-    leftIcon?: ReactNode;
-    rightIcon?: ReactNode;
-    state: "default" | "outlined"
+    iconPos?: 'left' | 'right' = 'left';
+    icon?: ReactNode;
+    label?: string = ''
+    textAlignment?: 'left' | 'right' | 'center' = 'center';
+    severity: "secondary" | "success" | "info" | "warning" | "danger" | "help" | "contrast" | undefined = ''
 
 }
