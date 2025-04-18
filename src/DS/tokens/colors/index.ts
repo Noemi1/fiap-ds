@@ -1,44 +1,21 @@
 export const DS_Colors_White = {
     white: {
         100: "#fff",
-        90: "#fff9",
-        80: "#fff8",
-        70: "#fff7",
-        60: "#fff6",
-        50: "#fff5",
-        40: "#fff4",
-        30: "#fff3",
-        20: "#fff2",
-        10: "#fff1"
-    },
-}
-export const DS_Colors_Black = {
-    black: {
-        100: "#000",
-        90: "#0009",
-        80: "#0008",
-        70: "#0007",
-        60: "#0006",
-        50: "#0005",
-        40: "#0004",
-        30: "#0003",
-        20: "#0002",
-        10: "#0001"
-    },
-}
-export const DS_Colors_Danger = {
-    danger: {
-        50: '#FEF2F2',
-        100: '#FEE2E2',
-        200: '#FECACA',
-        300: '#FCA5A5',
-        400: '#F87171',
-        500: '#EF4444',
-        600: '#DC2626',
-        700: '#B91C1C',
-        800: '#991B1B',
-        900: '#7F1D1D',
     }
+}
+export const DS_Colors_Secondary = {
+    secondary: {
+        100: "#000",
+        90: "#111827",
+        80: "#1f2937",
+        70: "#374151",
+        60: "#4b5563",
+        50: "#6b7280",
+        40: "#9ca3af",
+        30: "#d1d5db",
+        20: "#f9fafb",
+        10: "#f9fafb"
+    },
 }
 export const DS_Colors = {
     primary: {
@@ -54,7 +31,6 @@ export const DS_Colors = {
         900: '#5e1d3d',
     },
     
-    ...DS_Colors_Black,
+    ...DS_Colors_Secondary,
     ...DS_Colors_White,
-    ...DS_Colors_Danger,
 }

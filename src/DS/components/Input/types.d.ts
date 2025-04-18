@@ -7,5 +7,5 @@ export interface DS_InputProps extends InputHTMLAttributes<HTMLInputElement> {
     placeholder?: string;
     type?: string;
     value?: string;
-    state: "default" | "focus" | "error"
+    state?: "default" | "focus" | "error"
 }

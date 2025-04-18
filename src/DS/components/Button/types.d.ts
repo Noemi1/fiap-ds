@@ -5,6 +5,6 @@ export interface DS_ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> 
     icon?: ReactNode;
     label?: string = ''
     textAlignment?: 'left' | 'right' | 'center' = 'center';
-    severity: "secondary" | "success" | "info" | "warning" | "danger" | "help" | "contrast" | undefined = ''
-
+    severity: "primary" | "secondary" | undefined = '';
+    state?: string = '';
 }

@@ -1,61 +1,67 @@
 import styled, { css } from "styled-components";
 import { DS_InputProps } from "./types";
 import { DS_Colors } from "../../tokens/colors";
+import { DS_FontSize } from "../../tokens/font-size";
 import { DS_Spacing } from "../../tokens/spacing";
+import { DS_FontWeight } from "../../tokens/weight";
 
 export const Input = styled.input<DS_InputProps>`
-    display: flex;
-    width: 100%;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    height: ${DS_Spacing.s10};
-    padding: ${DS_Spacing.s3} ${DS_Spacing.s2};
-    background-color: ${DS_Colors.white[100]};
+    font-weight: ${DS_FontWeight.normal};
+    font-family: var(--font-family);
+    font-feature-settings: var(--font-feature-settings, normal);
+    font-size: ${DS_FontSize.base};
+    color: ${DS_Colors.secondary[100]};
+    background-color: ${DS_Colors.secondary[10]};
+    padding: ${DS_Spacing.s4} ${DS_Spacing.s5};
+    border: 1px solid ${DS_Colors.primary[400]};
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+    appearance: none;
     border-radius: ${DS_Spacing.s2};
-    &:placeholder {
-        color: ${DS_Colors.black[100]};
+    outline: none;
+    margin: ${DS_Spacing.s0};
+    width: 100%;
+    border-radius: ${DS_Spacing.s3};
+    &::placeholder {
+        color: ${DS_Colors.secondary[50]};
+        font-weight: ${DS_FontWeight.normal};
     }
-
-    ${props => props.state === 'default' && css`
-        border: 1px ${DS_Colors.primary[500]} solid;
-        color: ${DS_Colors.black[100]};
-        &:placeholder {
-            color: transparent
-        }
-        &:hover {
-            border: 1px ${DS_Colors.primary[600]} solid;
-        }
-    `}
-    ${props => props.state === 'focus' && css`
-        border: 1px ${DS_Colors.primary[400]} solid;
-        color: ${DS_Colors.black[100]};
-        &:placeholder {
-            color: ${DS_Colors.black[70]};
-        }
-    `}
-    ${props => props.state === 'error' && css`
-        border: 1px ${DS_Colors.danger[500]} solid;
-        color: ${DS_Colors.danger[500]};
-        &:placeholder {
-            color: ${DS_Colors.danger[500]};
-        }
-    `}
+    &:focus:hover, 
+    &:focus {
+        border: 2px solid ${DS_Colors.primary[500]};
+        outline: none;
+    }
+    &:hover {
+        border: 1px solid ${DS_Colors.primary[300]};
+        outline: none;
+    }
 `;
 export const InputContainer = styled.div`
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
     position: relative;
-    max-width: 300px;
-    width: 80%; 
 `;
 
 export const Label = styled.label`
     color: ${DS_Colors.primary[500]};
     white-space: nowrap;
+    padding: 0 ${DS_Spacing.s2};
+    display: block;
+    position: absolute;
+    top: 0;
+    transform: translateY(-50%);
+    left: ${DS_Spacing.s3};
+    background-color: ${DS_Colors.secondary[10]};
+    z-index:2;
 `;
-export const Icon = styled.span`
+
+export const Icon = styled.span<DS_InputProps>`
     color: ${DS_Colors.primary[500]};
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    line-height: 1px;
+    ${props => props.iconPos === 'left' && css`
+        left: ${DS_Spacing.s3};
+    `}
+    ${props => props.iconPos === 'right' && css`
+        right: ${DS_Spacing.s3};
+    `}
 `;
